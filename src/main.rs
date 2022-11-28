@@ -1,6 +1,20 @@
+use std::error::Error;
+use std::fs;
+use std::path::Path;
 
+fn main() -> Result<(), Box<dyn Error>> {
 
+    let _path = Path::new("/Users/molisa/Documents/rust/projects/src/test.txt");
+    let _file: Result<String, std::io::Error> = fs::read_to_string(&_path);
 
-fn main() {
-    println!("Hello, world!");
+    println!("{:?}", _file);
+
+    let binding: String = file?;
+    let sentences = binding.split("\n");
+
+    for line in sentences {
+        println!("{:?}", line);
+    }
+    Ok(())
+
 }
