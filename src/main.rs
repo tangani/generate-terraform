@@ -1,20 +1,17 @@
-use std::error::Error;
-use std::fs;
-use std::path::Path;
+// use std::fs::read_to_string;
+// use crate::core;
 
-fn main() -> Result<(), Box<dyn Error>> {
+mod scripts;
 
-    let _path = Path::new("/Users/molisa/Documents/rust/projects/src/test.txt");
-    let _file: Result<String, std::io::Error> = fs::read_to_string(&_path);
+fn main() {
 
-    println!("{:?}", _file);
+    let _contents = scripts::read_external_files::read_file("/Users/molisa/Documents/rust/projects/src/test.txt");
 
-    let binding: String = file?;
-    let sentences = binding.split("\n");
+    println!("{:?}", _contents);
 
-    for line in sentences {
-        println!("{:?}", line);
+    /*
+    for entry in contents {
+        println!("{:?}", entry);
     }
-    Ok(())
-
+     */
 }
